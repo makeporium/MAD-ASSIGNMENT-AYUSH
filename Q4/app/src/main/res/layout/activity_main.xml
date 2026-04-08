@@ -1,195 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg"
+    android:background="@drawable/bg_main"
     android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="28dp">
+        android:padding="22dp">
 
-        <!-- Header -->
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="40dp">
+            android:text="Q4 Photo App"
+            android:textColor="@color/w"
+            android:textStyle="bold"
+            android:textSize="28sp"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose folder, capture, browse and manage"
+            android:textColor="@color/g2"
+            android:textSize="13sp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="18dp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnFolder"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="@color/c1"
+            app:cardElevation="0dp">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="LUMINA"
-                android:textColor="@color/accent"
-                android:textSize="11sp"
-                android:letterSpacing="0.4"
-                android:fontFamily="sans-serif-medium" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Choose Save Folder"
+                android:textColor="@color/w"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+        </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Your Gallery"
-                android:textColor="@color/white"
-                android:textSize="36sp"
-                android:fontFamily="sans-serif-light"
-                android:layout_marginTop="4dp" />
-
-            <View
-                android:layout_width="40dp"
-                android:layout_height="2dp"
-                android:background="@color/accent"
-                android:layout_marginTop="12dp" />
-        </LinearLayout>
-
-        <!-- Camera Card -->
         <androidx.cardview.widget.CardView
             android:id="@+id/btnCamera"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:layout_marginBottom="16dp"
-            android:foreground="?attr/selectableItemBackground"
+            android:layout_height="110dp"
             android:clickable="true"
             android:focusable="true"
-            app:cardBackgroundColor="#1A1025"
+            android:foreground="?attr/selectableItemBackground"
+            android:layout_marginBottom="12dp"
             app:cardCornerRadius="20dp"
-            app:cardElevation="0dp"
-            xmlns:app="http://schemas.android.com/apk/res-auto">
+            app:cardBackgroundColor="@color/c2"
+            app:cardElevation="0dp">
 
-            <RelativeLayout
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="24dp">
-
-                <View
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:background="@drawable/circle_accent"
-                    android:layout_centerVertical="true" />
-
-                <TextView
-                    android:id="@+id/icCam"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="📷"
-                    android:textSize="26sp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="15dp" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="90dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Take Photo"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
-                        android:fontFamily="sans-serif-medium" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Capture &amp; save to folder"
-                        android:textColor="@color/grey"
-                        android:textSize="13sp"
-                        android:layout_marginTop="4dp" />
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="→"
-                    android:textColor="@color/accent"
-                    android:textSize="22sp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true" />
-            </RelativeLayout>
+                android:gravity="center"
+                android:text="Take Photo"
+                android:textColor="@color/w"
+                android:textStyle="bold"
+                android:textSize="20sp" />
         </androidx.cardview.widget.CardView>
 
-        <!-- Gallery Card -->
         <androidx.cardview.widget.CardView
             android:id="@+id/btnGallery"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:layout_marginBottom="32dp"
-            android:foreground="?attr/selectableItemBackground"
+            android:layout_height="110dp"
             android:clickable="true"
             android:focusable="true"
-            app:cardBackgroundColor="#0F1A20"
+            android:foreground="?attr/selectableItemBackground"
             app:cardCornerRadius="20dp"
-            app:cardElevation="0dp"
-            xmlns:app="http://schemas.android.com/apk/res-auto">
+            app:cardBackgroundColor="@color/c3"
+            app:cardElevation="0dp">
 
-            <RelativeLayout
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="24dp">
-
-                <View
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:background="@drawable/circle_teal"
-                    android:layout_centerVertical="true" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="🖼️"
-                    android:textSize="26sp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="15dp" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="90dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Browse Gallery"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
-                        android:fontFamily="sans-serif-medium" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Pick folder &amp; view images"
-                        android:textColor="@color/grey"
-                        android:textSize="13sp"
-                        android:layout_marginTop="4dp" />
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="→"
-                    android:textColor="#5ECFB0"
-                    android:textSize="22sp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true" />
-            </RelativeLayout>
+                android:gravity="center"
+                android:text="Open Gallery"
+                android:textColor="@color/w"
+                android:textStyle="bold"
+                android:textSize="20sp" />
         </androidx.cardview.widget.CardView>
-
-        <!-- Footer label -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="CSE3709 · Q4"
-            android:textColor="@color/divider"
-            android:textSize="11sp"
-            android:gravity="center"
-            android:letterSpacing="0.2" />
-
     </LinearLayout>
 </ScrollView>
