@@ -1,19 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:background="#0D1117">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="20dp"
+        android:paddingTop="40dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="🎵 Media Player"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+
+    <!-- Video View -->
+    <VideoView
+        android:id="@+id/vv"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:visibility="gone"
+        android:background="#000000"/>
+
+    <!-- Visualizer placeholder (when audio) -->
+    <ImageView
+        android:id="@+id/ivArt"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="#161B22"
+        android:src="@android:drawable/ic_media_play"
+        android:scaleType="center"
+        android:contentDescription="art"/>
+
+    <!-- Status -->
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No media loaded"
+        android:textColor="#8B949E"
+        android:textSize="14sp"
+        android:padding="20dp"/>
+
+    <!-- Seekbar -->
+    <SeekBar
+        android:id="@+id/sb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:progressTint="#58A6FF"
+        android:thumbTint="#58A6FF"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/tvTime"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="0:00 / 0:00"
+        android:textColor="#8B949E"
+        android:textSize="13sp"
+        android:textAlignment="center"
+        android:padding="8dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Open Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20dp"
+        android:paddingBottom="8dp">
+
+        <Button
+            android:id="@+id/btnOpenFile"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="📁 Open File"
+            android:textSize="13sp"
+            android:backgroundTint="#21262D"
+            android:textColor="#58A6FF"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+        <Button
+            android:id="@+id/btnOpenUrl"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="🌐 Open URL"
+            android:textSize="13sp"
+            android:backgroundTint="#21262D"
+            android:textColor="#58A6FF"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+    </LinearLayout>
+
+    <!-- Playback Controls -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="8dp">
+
+        <Button
+            android:id="@+id/btnRestart"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:text="⏮"
+            android:textSize="22sp"
+            android:backgroundTint="#21262D"
+            android:textColor="#FFFFFF"
+            style="@style/Widget.MaterialComponents.Button"/>
+
+        <Button
+            android:id="@+id/btnPlay"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:text="▶"
+            android:textSize="22sp"
+            android:backgroundTint="#238636"
+            android:textColor="#FFFFFF"
+            style="@style/Widget.MaterialComponents.Button"/>
+
+        <Button
+            android:id="@+id/btnPause"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:text="⏸"
+            android:textSize="22sp"
+            android:backgroundTint="#9E6A03"
+            android:textColor="#FFFFFF"
+            style="@style/Widget.MaterialComponents.Button"/>
+
+        <Button
+            android:id="@+id/btnStop"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:text="⏹"
+            android:textSize="22sp"
+            android:backgroundTint="#B91C1C"
+            android:textColor="#FFFFFF"
+            style="@style/Widget.MaterialComponents.Button"/>
+    </LinearLayout>
+
+</LinearLayout>
